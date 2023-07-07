@@ -1,0 +1,177 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>M3DBlog</title>
+     <link href="css/mywebsite.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/nhGy6ygG/favicon.jpg">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&family=Sigmar&display=swap" rel="stylesheet">
+    <style>
+          
+      
+         .center {
+                text-align: center;
+            }
+
+         h1, h2, p, li, footer h3 {
+                color: #BAFDFD;
+                text-shadow: 2px 2px #000000;
+            }
+        p, li, footer h3 {
+                font-size: 19px;
+            }
+      h1 {
+        font-family: 'Sigmar', cursive;
+      }
+  </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+ <!-- Bootstrap Navbar -->
+ <body class="wrapper container">
+  <header class="header">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">M3DBlog</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Products/products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="3d-prints.html">3DPrints</a>
+            </li>
+            <li>
+              <label class="toggle-switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+              </label>
+            </li>
+          </ul>
+
+          <button class="btn btn-outline-primary mx-3">Log In</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Info</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Full name">
+                    <label for="floatingInput">Full name</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button data-bs-dismiss="modal" type="button" class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+ <!-- Header -->
+<header style="position: relative; text-align: center; background-image: url('https://i.postimg.cc/ZqFxmMbj/Octopus-Peace.jpg'); background-size: cover; background-position: center; height: 700px; border-radius: 10px; width: 100%; overflow: hidden;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: Pale Turquoise;">
+    <h1 style="font-size: 60px;">My Landing Page</h1>
+      <p class="header-p">Welcome to a place where 3d prinitng, gaming, and all things nerdy are talked about!</p>
+    </div>
+</header>
+
+  <!-- Introduction -->
+  <section>
+    <h2 class="center">Intro</h2>
+    <div class="flex-container">
+    <div class="grid-container-left rounded">
+    <p class="bordered">Well, I'm not going to write a super long intro so here goes. I created this page to show what I like to do in my free time, to build more networking connections, and to display my learning progress along the way. So be prepared for multiple updates to this page!</p>
+      </div>
+    </div>
+  </section>
+
+<!-- About Me -->
+  <section>
+    <h2 class="center">About Me</h2>
+    <div class="flex-container">
+    <div class="grid-container rounded">
+    <p class="bordered">What's up! My name is Javier, I'm a nerdy dude who loves to 3d print things in my spare time, play video games, collect pokemon cards and funko pops (you should  see my living room). I am the oldest of 5 kids, currently living in Arizona, born in California, my parents were born in state of Guerrero, MX, and I have a 10 year old daughter.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Blog Post -->
+  <section>
+    <h2 class="center">Journey to Web Developer</h2>
+    <div class="flex-container">
+    <div class="grid-container-right rounded">
+    <p class="bordered">I had previously attempted to get into Sofware Developing through Amazon Technical Academy, it didn't workout. I had made up my mind and I was going to go back to college until, one of my friends sent me a link to this program Software Development by Correlation One. It caught my attention, I applied, I was accepted, and next thing I know I'm a month into learning and I'm loving every second of it.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Contact Sections -->
+ <section id="section-c" class="bordered-section" style="text-align: center;">
+     <h2 class="contact section-h2">Let's talk some more!</h2>
+    <form method="get" style="margin-top: 20px;">
+     <div class="form-container">
+  <div class="form-row">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+  </div>
+  <div class="form-row">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+  </div>
+  <div class="form-row">
+    <label for="phone number">Phone Number:</label>
+    <input type="tel" id="phone number" name="phone number">
+  </div>
+  <input type="submit" value="Send">
+</div>
+
+    </form>
+  </div>
+</section>
+
+<!--External Site Links Section-->
+  <footer>
+    <div style="display">
+    <h3>Here are a few links where I hangout</h3>
+    <p class="footer-p">
+      <a class="footer-link" href="https://www.linkedin.com/in/javierpastorjr/">
+        <img class="icon-img" src="https://www.edigitalagency.com.au/wp-content/uploads/Linkedin-logo-icon-png.png" alt="linkedin">
+      </a>
+      <a class="footer-link" href="https://www.twitch.tv/m3xicanash">
+        <img class="icon-img" src="https://www.freepnglogos.com/uploads/twitch-app-logo-png-3.png" alt="twitch">
+      </a>
+      <a class="footer-link" href="https://www.youtube.com/channel/UC2atqy_TVJSukI8VQyq5b8g">
+        <img class="icon-img" src="https://www.freepnglogos.com/uploads/youtube-play-button-png/youtube-play-button-file-youtube-play-buttom-icon-svg-wikimedia-commons-8.png" alt="youtube">
+      </a>
+      <a class="footer-link" href="https://codepen.io/JMosWorkPlac3">
+        <img class="icon-img" src="https://cdn0.iconfinder.com/data/icons/social-media-2091/100/social-32-1024.png" alt="codepen">  
+      </a>
+    </p>
+    <div class="footer__content"> &copy; 2023 M3DBlog. All rights reserved.</div>
+  </footer>
+  <script type="text/javascript" src="Javascript/darkmode.js"></script>
+ </body>
+</html>

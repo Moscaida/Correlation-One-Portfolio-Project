@@ -1,0 +1,256 @@
+header {
+  border-radius: 10px;
+  background-size: 100% auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-p {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #BAFDFD;
+  background-color: rgba(135, 206, 250, 0.1); 
+  padding: 10px;
+  display: inline-block;
+}
+.navbar-brand, .nav-link {
+  color: blue !important;
+  text-shadow: none !important;
+}
+
+/* Dark Mode begins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  transition: all 0.4s ease-in;
+}
+
+.dark-mode {
+  background-color: #0a0a0a;
+  color: #ed0a0a;
+  transition: all 0.4s ease-in;
+}
+
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.13rem;
+  margin-bottom: 0.63rem;
+  margin-inline: auto;
+}
+
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: all 0.4s ease-in;
+  border-radius: 2.13rem;
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.63rem;
+  width: 1.63rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+
+input:focus + .slider {
+  box-shadow: 0 0 2px #0e058d;
+}
+
+
+input:checked + .slider:before {
+  transform: translateX(1.63rem);
+}
+/* Dark Mode ends*/
+
+h2 {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+}
+
+p, li, footer h3 {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+p:not(.header-p):not(.footer-p) {
+  display: table; /* keep the background color wrapped tight */
+  margin: 0px auto 20px auto; /* keep the table centered */
+  padding: 10px;
+  background-color: rgba(0, 0, 255, 0.6); /* Background color with 50% opacity */
+  color: honeydew;
+}
+
+.bordered {
+  text-indent: 2.0em; /* Added indentation */
+  border-style: outset;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 30%;
+}
+
+.grid-container-left,
+.grid-container-right {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 1px;
+  align-items: center;
+  justify-items: center;
+  width: 50%;
+  margin: 0 100px;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.bordered-section {
+  border: 1px solid #BAFDFD; /* Change the color and width as needed */
+  border-radius: 5px;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  padding: 5px;
+  width: 20%;
+  margin: 0 auto;
+  border-style: outset;
+  background-color: rgba(0, 0, 255, 0.2); /* Background color with 50% opacity */
+}
+
+.form-container {
+        color: #e6f7ff;
+        text-shadow: 2px 2px #000000;
+        font-size: 18px;
+      }
+.footer-p {  
+  background-color: transparent; 
+}
+
+.icon-img {
+  width: auto;
+  height: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-img:hover {
+  opacity: 0.5;
+}
+
+.footer__content {
+  font: size 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #BAFDFD;
+}
+
+/* For tablets and small laptops */
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 48px;
+  }
+  
+  .header-p {
+    line-height: 1.4;
+  }
+  
+  p, li, footer h3 {
+    line-height: 1.7;
+  }
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 36px;
+  }
+  
+  .header-p {
+    line-height: 1.3;
+  }
+  
+  p, li, footer h3 {
+    line-height: 1.5;
+  }
+}
+
+.footer-p {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  margin: 0 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .footer-link {
+    margin: 5px;
+  }
+}
+
+.footer-link {
+  margin: 0 10px;
+  padding: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
