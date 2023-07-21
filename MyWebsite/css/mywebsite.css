@@ -104,6 +104,45 @@ input:checked + .slider:before {
 }
 /* Dark Mode ends*/
 
+ /* Fade and Slide */
+ body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.item > p {
+  text-align: center;
+}
+
+.left {
+  transform-origin: left center;
+  transform: translateX(-50%);
+}
+
+.right {
+  transform-origin: right center;
+  transform: translateX(50%);
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* End of Fade and Slide */
 h2 {
   font-size: 24px;
   font-family: 'Roboto', sans-serif;
