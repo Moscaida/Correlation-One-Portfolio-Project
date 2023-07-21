@@ -16,7 +16,7 @@ modeToggle.addEventListener('click', toggleMode);
 
 //Fade and Slide//
 
-const items = document.querySelectorAll('.card')
+const items = document.querySelectorAll('card')
 
 const options = {
   threshold: 0.5
