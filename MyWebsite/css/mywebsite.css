@@ -1,3 +1,21 @@
+.center {
+  text-align: center;
+}
+
+h1, h2, p, li, footer h3 {
+  color: #BAFDFD;
+  text-shadow: 2px 2px #000000;
+}
+
+p, li, footer h3 {
+  font-size: 19px;
+}
+
+h1 {
+  font-family: 'Sigmar', cursive;
+}
+
+
 header {
   border-radius: 10px;
   background-size: 100% auto;
@@ -105,6 +123,12 @@ input:checked + .slider:before {
 /* Dark Mode ends*/
 
  /* Fade and Slide */
+ *, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
  body {
   font-family: "Poppins", sans-serif;
  }
@@ -138,11 +162,17 @@ input:checked + .slider:before {
   transform: translateX(50%);
 }
 
+.card {
+  min-height: 30rem;
+  max-width: 20rem;
+}
+
 .slide-in {
   opacity: 1;
   transform: translateX(0);
 }
 /* End of Fade and Slide */
+
 h2 {
   font-size: 24px;
   font-family: 'Roboto', sans-serif;

@@ -16,14 +16,14 @@ modeToggle.addEventListener('click', toggleMode);
 
 //Fade and Slide//
 
-const items = document.querySelectorAll('card')
+const items = document.querySelectorAll('.card')
 
 const options = {
   threshold: 0.5
 }
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('slide-in');
     }
