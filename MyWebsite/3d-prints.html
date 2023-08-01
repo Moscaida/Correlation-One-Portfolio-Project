@@ -11,41 +11,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&family=Sigmar&display=swap" rel="stylesheet">
 </head>
 
-  <h1>3D Prints</h1>
-  <!-- Bootstrap Navbar -->
- <body class="wrapper container">
+<!-- Bootstrap Navbar -->
+<body class="wrapper container">
   <header class="header">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">M3DBlog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="about-us.html">About Us</a>
-              </li>
+              <a class="nav-link" aria-current="page" href="about-us.html">About Us</a>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="contact-us.html">Contact Us</a>
+              <a class="nav-link" href="contact-us.html">Contact Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Products/products.html">Products</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="3d-prints.html">3DPrints</a>
+            </li>
+            <li>
+              <label class="toggle-switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+              </label>
+            </li>
           </ul>
+
+          <button class="btn btn-outline-primary mx-3">Log In</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Info</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInputName" placeholder="Full name">
+                    <label for="floatingInputName">Full name</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                    <label for="floatingInputEmail">Email address</label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button data-bs-dismiss="modal" type="button" class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
   </header>
+  <h1>3D Prints</h1>
   <main>
     <section class="featured-articles">
       <h2 class="mt-4 mb-3">Some of my prints!</h2>
-      <div class="featured-links">
       <div class="link-cards">
         <!-- include card elements with image, title and text  -->
-        <div>
+      
           <!-- card 1 -->
           <div class="card">
             <img src="media/images/Digivise-Deck-Holder.jpg" class="card-img-top" alt="Digivice Deck HOlder">
@@ -54,11 +88,11 @@
               <p class="card-text">Printed this from Thingiverse for a friend.</p>
               <a href="https://www.thingiverse.com/thing:5476386" class="btn btn-primary">Thingiverse</a>
             </div>
-          </div>
+            </div>
           <!-- end of card 1 -->
-        </div>
+     
 
-        <div>
+      
           <!-- card 2 -->
           <div class="card">
             <img src="media/images/Soul-Crystals.jpg" class="card-img-top" alt="FFVIX Soul Crystals">
@@ -67,10 +101,10 @@
               <p class="card-text">Left to Right AST, SMN, WAR, WHM.</p>
               <a href="https://www.etsy.com/listing/921939305/soul-crystalsjob-stones-ffxiv-digital?ref=yr_purchases" class="btn btn-primary">Etsy</a>
             </div>
-          </div>
+            </div>
           <!-- end of card 2 -->
-        </div>
-        <div>
+       
+      
           <!-- card 3 -->
           <div class="card">
             <img src="media/images/Ichigo-Hollow-Mask.jpg" class="card-img-top" alt="Ichigo Hollow MaskB">
@@ -79,10 +113,9 @@
               <p class="card-text">One of my favorite prints.</p>
               <a href="https://www.thingiverse.com/thing:3001470" class="btn btn-primary">Thingiverse</a>
             </div>
-          </div>
+            </div>
           <!-- end of card 3 -->
-        </div>
-      </div>
+       </div>
     </section>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
