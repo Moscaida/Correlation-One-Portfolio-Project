@@ -3,14 +3,14 @@ const body = document.querySelector('body');
 const modeToggle = document.getElementById('mode-toggle');
 const modeStatus = document.querySelector('.mode-status');
 function toggleMode() {
-body.classList.toggle('dark-mode');
+  body.classList.toggle('dark-mode');
 
-const modeMessage = body.classList.contains('dark-mode') ?
+  const modeMessage = body.classList.contains('dark-mode') ?
     'Dark Mode'
     : "Light Mode"
 
-modeStatus.innerText = "Currently in " + modeMessage;
-  }
+  modeStatus.innerText = "Currently in " + modeMessage;
+}
 
 modeToggle.addEventListener('click', toggleMode);
 
@@ -36,56 +36,58 @@ items.forEach(item => {
 
 //Contact Form//
 
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-
-form.addEventListener('submit', e=> {
-  e.preventDefault();
-  
-  validateInput();
-});
-
-const setError = (element, message) => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector('.error');
-
-  errorDisplay.innerText = message;
-  inputControl.classList.add('error');
-  inputControl.classList.remove('success')
-}
-
-const setSuccess = element => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
-    errorDisplay.innerText = '';
-    inputControl.classList.add('success');
-    inputControl.classList.remove('error');
+const firebaseConfig = {
+  apiKey: 
+  authDomain: 
+  databaseURL: 
+  projectId: 
+  storageBucket: 
+  messagingSenderId:
+  appId: 
+  measurementId: 
 };
 
-const isValidEmail = email => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
+
+// reference your database
+var contactFormDB = firebase.database().ref("contactForm");
+
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  var name = getElementVal("name");
+  var emailid = getElementVal("emailid");
+  var phone = getElementVal("phone");
+  var msgContent = getElementVal("msgContent");
+
+  saveMessages(name, emailid, phone, msgContent);
+
+  //   enable alert
+  document.querySelector(".alert").style.display = "block";
+
+  //   remove the alert
+  setTimeout(() => {
+    document.querySelector(".alert").style.display = "none";
+  }, 3000);
+
+  //   reset the form
+  document.getElementById("contactForm").reset();
 }
 
-const validateInputs = () => {
-      const usernameValue = username.value.trim();
-      const emailValue = email.value.trim();
+const saveMessages = (name, emailid, phone, msgContent) => {
+  var newContactForm = contactFormDB.push();
 
-      if(usernameValue === '') {
-          setError(username, 'Username is required');
+  newContactForm.set({
+    name: name,
+    emailid: emailid,
+    phone: phone,
+    msgContent: msgContent,
+  });
+};
 
-      } else {
-        setSuccess(username);
-      }
-
-      if(emailValue === '') {
-        setError(email, 'Email is required');
-      } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Provide a valid email address');
-      } else {
-        setSuccess(email);
-      }
-
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
 };
