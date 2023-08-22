@@ -24,7 +24,7 @@ h2,
 p,
 li,
 footer {
-  color: #510269;
+  color: #02134d;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -44,8 +44,8 @@ footer {
 
 .navbar-brand,
 .nav-link {
-  color: #510269 !important;
-  text-shadow: none !important;
+  color: #02134d;
+  text-shadow: none;
 }
 
 .banner {
@@ -65,7 +65,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #510269;
+  color: #02134d;
   font-size: 60px;
 }
 
@@ -85,9 +85,26 @@ footer {
 
 .dark-mode {
   background-color: #0a0a0a;
-  transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;  
 }
 
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode p,
+.dark-mode li,
+.dark-mode footer {
+  color: #e0e0e0;
+  /* this is a light gray color, you can adjust as needed */
+}
+
+body.dark-mode .footer__content {
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link {
+  color: #e0e0e0;
+}
 
 .toggle-switch {
   position: relative;
@@ -126,19 +143,19 @@ footer {
   width: 1.63rem;
   left: 0.25rem;
   bottom: 0.25rem;
-  background-color: rgb(2, 2, 2);
+  background-color: rgb(17, 16, 16);
   transition: 0.4s;
   border-radius: 50%;
 }
 
 
 input:checked+.slider {
-  background-color: #270447;
+  background-color: #5b5a5c;
 }
 
 
 input:focus+.slider {
-  box-shadow: 0 0 2px #0e058d;
+  box-shadow: 0 0 2px #0c0c0c;
 }
 
 
@@ -158,9 +175,6 @@ input:checked+.slider:before {
   min-height: 100vh;
   opacity: 0;
   transition: opacity 0.5s, transform 0.5s;
-}
-
-.item>p {
   text-align: center;
 }
 
@@ -190,11 +204,9 @@ input:checked+.slider:before {
   flex-wrap: wrap;
   padding: 20px;
   width: 30%;
-  display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
   padding: 1px;
-  align-items: center;
   justify-items: center;
   max-width: 90%;
   margin: 0 auto;
@@ -206,17 +218,12 @@ input:checked+.slider:before {
 -------------------------- */
 .bordered {
   text-indent: 2.0em;
-  /* Added indentation */
   border-style: outset;
   display: table;
-  /* keep the background color wrapped tight */
   margin: 0px auto 20px auto;
-  /* keep the table centered */
   padding: 10px;
-  background-color: rgba(112, 225, 234, 0.6);
-  /* Background color with 50% opacity */
-  color: rgb(8, 8, 8);
-
+  background-color: rgba(0, 0, 255, 0.2);
+  color: rgb(17, 16, 16);
 }
 
 /* --------------------------
@@ -232,8 +239,6 @@ input:checked+.slider:before {
 }
 
 .bordered-section {
-  border: 1px solid #510269;
-  /* Change the color and width as needed */
   width: 90%;
   height: 60vh;
   padding: 20px;
@@ -245,14 +250,11 @@ input:checked+.slider:before {
   align-items: center;
   background-color: rgba(0, 0, 255, 0.2);
   resize: auto;
-  text-wrap: wrap;
   overflow-wrap: break-word;
   column-count: initial !important;
   writing-mode: horizontal-tb !important;
   box-sizing: border-box;
   border-style: solid;
-
-  /* Background color with 50% opacity */
 }
 
 
@@ -370,7 +372,7 @@ input:checked+.slider:before {
    Footer
 -------------------------- */
 .footer-links {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   flex-wrap: wrap;
   background-color: transparent;
@@ -378,19 +380,22 @@ input:checked+.slider:before {
   padding: 10px;
 }
 
-.icon-img {
+.footer-link {
   width: auto;
   height: 50px;
   transition: all 0.3s ease-in-out;
+  color: #0e0e10;
+  margin: 0 10px;
+  padding: 10px;
 }
 
-.icon-img:hover {
+.footer-link:hover {
   opacity: 0.5;
 }
 
 .footer__content {
   font-size: 12px;
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  color: rgb(44, 4, 224);
+
+  color: #02134d;
 }
