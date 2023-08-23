@@ -1,67 +1,55 @@
-//Dark Mode//
-const body = document.querySelector('body');
-const modeToggle = document.getElementById('mode-toggle');
-const modeStatus = document.querySelector('.mode-status');
-function toggleMode() {
-  body.classList.toggle('dark-mode');
+//DARK MODE
+$(document).ready(function () {
+  const $body = $('body');
+  const $modeToggle = $('#mode-toggle');
+  const $modeStatus = $('.mode-status');
 
-  const modeMessage = body.classList.contains('dark-mode') ?
-    'Dark Mode'
-    : "Light Mode"
-
-  modeStatus.innerText = "Currently in " + modeMessage;
-}
-
-modeToggle.addEventListener('click', toggleMode);
-
-document.addEventListener('DOMContentLoaded', function () {
-  const body = document.body;
-  const toggle = document.getElementById('mode-toggle');
-
-  // Check for dark mode preference in local storage
-  if (localStorage.getItem('dark-mode') === 'enabled') {
-    body.classList.add('dark-mode');
-    toggle.checked = true;
+  function toggleMode() {
+    $body.toggleClass('dark-mode');
+    const modeMessage = $body.hasClass('dark-mode') ? 'Dark Mode' : 'Light Mode';
+    $modeStatus.text("Currently in " + modeMessage);
   }
 
-  // Add event listener to the toggle
-  toggle.addEventListener('change', function () {
-    if (this.checked) {
-      body.classList.add('dark-mode');
+  $modeToggle.click(toggleMode);
+
+  if (localStorage.getItem('dark-mode') === 'enabled') {
+    $body.addClass('dark-mode');
+    $modeToggle.prop('checked', true);
+  }
+
+  $modeToggle.change(function () {
+    if ($(this).is(':checked')) {
+      $body.addClass('dark-mode');
       localStorage.setItem('dark-mode', 'enabled');
     } else {
-      body.classList.remove('dark-mode');
+      $body.removeClass('dark-mode');
       localStorage.setItem('dark-mode', 'disabled');
     }
   });
 });
 
-
-//Fade and Slide//
-
-const items = document.querySelectorAll('.item');
-
+//FADE AND SLIDE
+const $items = $('.item');
 const options = {
   threshold: 0.5
-}
+};
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('slide-in');
+      $(entry.target).addClass('slide-in');
     } else {
-      entry.target.classList.remove('slide-in');
+      $(entry.target).removeClass('slide-in');
     }
   });
 }, options);
 
-items.forEach(item => {
-  observer.observe(item);
+$items.each(function () {
+  observer.observe(this);
 });
 
 
-//Contact Form//
-
+//CONTACT FORM
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -73,47 +61,38 @@ const firebaseConfig = {
   measurementId: "YOUR_MESSAGE_ID"
 };
 
-// initialize firebase
 firebase.initializeApp(firebaseConfig);
 
-// reference your database
 var contactFormDB = firebase.database().ref("contactForm");
 
-document.getElementById("contactForm").addEventListener("submit", submitForm);
-
-function submitForm(e) {
+$("#contactForm").submit(function (e) {
   e.preventDefault();
 
-  var name = getElementVal("name");
-  var emailid = getElementVal("emailid");
-  var phone = getElementVal("phone");
-  var msgContent = getElementVal("msgContent");
+  const name = $("#name").val();
+  const emailid = $("#emailid").val();
+  const phone = $("#phone").val();
+  const msgContent = $("#msgContent").val();
 
   saveMessages(name, emailid, phone, msgContent);
 
-  //   enable alert
-  document.querySelector(".alert").style.display = "block";
+  // Enable alert
+  $(".alert").show();
 
-  //   remove the alert
+  // Remove the alert after 3 seconds
   setTimeout(() => {
-    document.querySelector(".alert").style.display = "none";
+    $(".alert").hide();
   }, 3000);
 
-  //   reset the form
-  document.getElementById("contactForm").reset();
-}
+  // Reset the form
+  $("#contactForm")[0].reset();
+});
 
-const saveMessages = (name, emailid, phone, msgContent) => {
-  var newContactForm = contactFormDB.push();
-
+function saveMessages(name, emailid, phone, msgContent) {
+  const newContactForm = contactFormDB.push();
   newContactForm.set({
     name: name,
     emailid: emailid,
     phone: phone,
     msgContent: msgContent,
   });
-};
-
-const getElementVal = (id) => {
-  return document.getElementById(id).value;
-};
+}
