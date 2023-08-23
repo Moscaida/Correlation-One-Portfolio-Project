@@ -14,9 +14,32 @@ function toggleMode() {
 
 modeToggle.addEventListener('click', toggleMode);
 
+document.addEventListener('DOMContentLoaded', function () {
+  const body = document.body;
+  const toggle = document.getElementById('mode-toggle');
+
+  // Check for dark mode preference in local storage
+  if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+    toggle.checked = true;
+  }
+
+  // Add event listener to the toggle
+  toggle.addEventListener('change', function () {
+    if (this.checked) {
+      body.classList.add('dark-mode');
+      localStorage.setItem('dark-mode', 'enabled');
+    } else {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('dark-mode', 'disabled');
+    }
+  });
+});
+
+
 //Fade and Slide//
 
-const items = document.querySelectorAll('.item')
+const items = document.querySelectorAll('.item');
 
 const options = {
   threshold: 0.5
@@ -26,25 +49,28 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('slide-in');
+    } else {
+      entry.target.classList.remove('slide-in');
     }
   });
-}, options)
+}, options);
 
 items.forEach(item => {
   observer.observe(item);
-})
+});
+
 
 //Contact Form//
 
 const firebaseConfig = {
-  apiKey: 
-  authDomain: 
-  databaseURL: 
-  projectId: 
-  storageBucket: 
-  messagingSenderId:
-  appId: 
-  measurementId: 
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SEND_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MESSAGE_ID"
 };
 
 // initialize firebase
