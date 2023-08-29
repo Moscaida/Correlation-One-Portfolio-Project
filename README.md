@@ -1,7 +1,7 @@
 # Codio-Work-Portfolio
 This is my updated landing page
 ## Adding the finishing touches
-I have polished up my webiste, I look forward to any contributions. **Let** me know how I'm doing.
+Hello, thanks stopping by. This is my landing page school project, I will continously update it until I graduate from Correlation One. After that there will be few changes to this project.  **Let** me know how I'm doing.
 Outside of this course I *love*:
 1. 3D Printing
 2. Movies

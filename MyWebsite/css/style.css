@@ -53,7 +53,7 @@ footer {
   text-align: center;
   background-image: url('../media/images/Moon-City-Lamp.png');
   background-size: cover;
-  background-position: center;  
+  background-position: center;
   height: 800px;
   border-radius: 10px;
   width: 100%;
@@ -117,7 +117,7 @@ body.dark-mode .nav-link,
 body.dark-mode .banner h1,
 body.dark-mode .banner p,
 body.dark-mode .footer-link ion-icon,
-body.dark-mode .footer__content  {
+body.dark-mode .footer__content {
   color: #e0e0e0;
 }
 
@@ -249,11 +249,9 @@ main.table {
   width: 82vw;
   height: 90vh;
   background-color: rgba(0, 0, 255, 0.2);
-
   backdrop-filter: blur(7px);
   box-shadow: 0 .4rem .8rem #0005;
   border-radius: .8rem;
-
   overflow: hidden;
 }
 
@@ -305,26 +303,23 @@ main.table {
   width: 95%;
   max-height: calc(89% - 1.6rem);
   background-color: rgba(206, 205, 205, 0.733);
-
   margin: .8rem auto;
   border-radius: .6rem;
-
   overflow: auto;
-  overflow: overlay;
 }
 
-.table__body::-webkit-scrollbar{
+.table__body::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
 }
 
-.table__body::-webkit-scrollbar-thumb{
+.table__body::-webkit-scrollbar-thumb {
   border-radius: .5rem;
   background-color: #0004;
   visibility: hidden;
 }
 
-.table__body:hover::-webkit-scrollbar-thumb{ 
+.table__body:hover::-webkit-scrollbar-thumb {
   visibility: visible;
 }
 
@@ -341,7 +336,9 @@ td img {
   vertical-align: middle;
 }
 
-table, th, td {
+table,
+th,
+td {
   border-collapse: collapse;
   padding: 1rem;
   text-align: left;
@@ -420,7 +417,7 @@ tbody tr.hide td img {
 
 @media (max-width: 1000px) {
   td:not(:first-of-type) {
-      min-width: 12.1rem;
+    min-width: 12.1rem;
   }
 }
 
@@ -430,15 +427,15 @@ thead th span.icon-arrow {
   height: 1.3rem;
   border-radius: 50%;
   border: 1.4px solid transparent;
-  
+
   text-align: center;
   font-size: 1rem;
-  
+
   margin-left: .5rem;
   transition: .2s ease-in-out;
 }
 
-thead th:hover span.icon-arrow{
+thead th:hover span.icon-arrow {
   border: 1.4px solid #6c00bd;
 }
 
@@ -446,17 +443,27 @@ thead th:hover {
   color: #6c00bd;
 }
 
-thead th.active span.icon-arrow{
+thead th.active span.icon-arrow {
   background-color: #6c00bd;
   color: #fff;
 }
 
-thead th.asc span.icon-arrow{
+thead th.asc span.icon-arrow {
   transform: rotate(180deg);
 }
 
-thead th.active,tbody td.active {
+thead th.active,
+tbody td.active {
   color: #6c00bd;
+}
+
+
+/* --------------------------
+   Google Maps
+-------------------------- */
+
+#map {
+  height: 60vh;
 }
 
 /* --------------------------
