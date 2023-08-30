@@ -83,15 +83,37 @@ function submitForm(e) {
     var emailid = getElementVal("emailid");
     var phone = getElementVal("phone");
     var msgContent = getElementVal("msgContent");
+    var alertBox = document.querySelector('.alert');
+    alertBox.textContent = ''; // clear previous messages
+    alertBox.style.display = 'none';
 
-    saveMessages(name, emailid, phone, msgContent);
+    // Check if phone number is not blank
+    if (phone === '') {
+        alertBox.textContent = 'Phone number is required.';
+        alertBox.style.display = 'block';
+        return;
+    }
+
+    // Check if phone number contains only numbers and dashes
+    var phoneRegex = /^[0-9-]+$/;
+    if (!phoneRegex.test(phone)) {
+        alertBox.textContent = 'Phone number can only contain numbers and dashes.';
+        alertBox.style.display = 'block';
+        return;
+    }
+
+    // Sanitize phone number by removing dashes
+    var sanitizedPhoneNumber = phone.replace(/-/g, '');
+
+    saveMessages(name, emailid, sanitizedPhoneNumber, msgContent);
 
     // Enable alert
-    document.querySelector(".alert").style.display = "block";
+    alertBox.textContent = 'Your message sent';
+    alertBox.style.display = 'block';
 
     // Remove the alert after 3 seconds
     setTimeout(() => {
-        document.querySelector(".alert").style.display = "none";
+        alertBox.style.display = 'none';
     }, 3000);
 
     // Reset the form
